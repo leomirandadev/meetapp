@@ -12,8 +12,7 @@ export default async (req, res, next) => {
   const [, token] = authHeader.split(' ');
 
   try {
-    const decoded = await promisify(jwt.verify)(token, authConfig.secretToken);
-    console.log(decoded);
+    await promisify(jwt.verify)(token, authConfig.secretToken);
     return next();
   } catch (error) {
     return res.status(401).json({

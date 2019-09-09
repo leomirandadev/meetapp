@@ -38,6 +38,7 @@ class UserController {
       },
     });
   }
+
   async update(req, res) {
     const schema = Yup.object().shape({
       id: Yup.number()
@@ -89,7 +90,6 @@ class UserController {
       },
     });
   }
-
 }
 
 export default new UserController();
